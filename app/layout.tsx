@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
+import Preloader from "@/components/Preloader";
 export const metadata: Metadata = {
   title: {
     default: "Lumina - Architecture & Interiors",
@@ -72,6 +72,7 @@ export default function RootLayout({
           "font-sans"
         )}
       >
+        <Preloader />
         {children}
       </body>
     </html>

@@ -54,7 +54,7 @@ const Philosophy = () => (
 );
 
 const ProcessSpotlight = () => (
-  <section id="process" className="bg-black text-white py-16 sm:py-24 md:py-32 clip-path-slant -mt-20 pb-24 sm:pb-36 md:pb-48 relative z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+  <section id="process" className="bg-black text-white py-24 sm:py-24 md:py-32 clip-path-slant -mt-20 pb-24 sm:pb-36 md:pb-48 relative z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(40,40,40,0.5),_black_70%)] opacity-50" />
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-20 md:mb-28 border-b border-white/10 pb-6 sm:pb-12">
@@ -64,9 +64,9 @@ const ProcessSpotlight = () => (
       <div className="grid grid-cols-1 gap-12 sm:gap-20 md:gap-28">
         <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-14 group">
           <div className="font-['Space_Grotesk'] text-[70px] sm:text-[100px] md:text-[160px] font-black text-white/5 group-hover:text-white/20 transition-colors duration-700 leading-none">01</div>
-          <div className="flex-1">
+          <div className="flex-1 w-full text-center md:text-left">
             <h4 className="font-['Space_Grotesk'] text-[24px] sm:text-[32px] md:text-[44px] mb-3 sm:mb-6">Consultation &amp; Analysis</h4>
-            <p className="font-['Inter'] text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl">Deep analysis of functional requirements, psychological needs, and site characteristics to establish the architectural baseline.</p>
+            <p className="font-['Inter'] text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto md:mx-0">Deep analysis of functional requirements, psychological needs, and site characteristics to establish the architectural baseline.</p>
           </div>
           <div className="w-full md:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] md:h-[280px] overflow-hidden rounded-[22px] opacity-60 group-hover:opacity-100 transition-all duration-700 shadow-2xl group-hover:scale-105 flex-shrink-0">
             <img alt="Architectural planning" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src={PROCESS_IMG_1} />
@@ -74,9 +74,9 @@ const ProcessSpotlight = () => (
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:flex-row-reverse items-center gap-6 sm:gap-8 md:gap-14 group">
           <div className="font-['Space_Grotesk'] text-[70px] sm:text-[100px] md:text-[160px] font-black text-white/5 group-hover:text-white/20 transition-colors duration-700 leading-none">02</div>
-          <div className="flex-1 md:text-right">
+          <div className="flex-1 w-full text-center md:text-right">
             <h4 className="font-['Space_Grotesk'] text-[24px] sm:text-[32px] md:text-[44px] mb-3 sm:mb-6">Spatial Modeling</h4>
-            <p className="font-['Inter'] text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl md:ml-auto">Iterative modeling to sculpt the void, defining the interaction between light, geometry, and material for the environmental narrative.</p>
+            <p className="font-['Inter'] text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto md:ml-auto">Iterative modeling to sculpt the void, defining the interaction between light, geometry, and material for the environmental narrative.</p>
           </div>
           <div className="w-full md:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] md:h-[280px] overflow-hidden rounded-[22px] opacity-60 group-hover:opacity-100 transition-all duration-700 shadow-2xl group-hover:scale-105 flex-shrink-0">
             <img alt="Material selection" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src={PROCESS_IMG_2} />
