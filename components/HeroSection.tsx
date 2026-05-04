@@ -4,126 +4,67 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Link from "next/link";
+import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 // Increased to 720 frames (30fps) for ultimate smoothness
 const FRAME_COUNT = 720;
 
 const MobileHero = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const img1Ref = useRef<HTMLImageElement>(null);
-  const img2Ref = useRef<HTMLImageElement>(null);
-  const img3Ref = useRef<HTMLImageElement>(null);
-
-  const text1Ref = useRef<HTMLDivElement>(null);
-  const text2Ref = useRef<HTMLDivElement>(null);
-  const text3Ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        }
-      });
-
-      // Initial states
-      gsap.set([img2Ref.current, img3Ref.current], { clipPath: "inset(100% 0% 0% 0%)", scale: 1.1 });
-      gsap.set([text2Ref.current, text3Ref.current], { opacity: 0, y: 30 });
-
-      // Anim 1
-      tl.to(wrapperRef.current, { scale: 0.95, borderRadius: "24px", duration: 1 })
-        .to(text1Ref.current, { opacity: 0, y: -30, duration: 1 }, "<")
-
-        // Anim 2
-        .to(img2Ref.current, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2 })
-        .to(text2Ref.current, { opacity: 1, y: 0, duration: 1 }, "-=1")
-        .to(text2Ref.current, { opacity: 0, y: -30, duration: 1 })
-
-        // Anim 3
-        .to(img3Ref.current, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2 })
-        .to(text3Ref.current, { opacity: 1, y: 0, duration: 1 }, "-=1");
-
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={containerRef} className="relative w-full h-[400vh] bg-white">
-      <div className="sticky top-0 w-full h-[100svh] p-4 flex flex-col justify-center items-center overflow-hidden">
-
-        <div ref={wrapperRef} className="relative w-full h-full overflow-hidden rounded-[20px] bg-black">
-          <Image
-            ref={img1Ref}
-            src="/hero/mobile/hero1.jpg"
-            alt="Lumina Space 1"
-            fill
-            className="object-cover opacity-80"
-            priority
-          />
-          <Image
-            ref={img2Ref}
-            src="/hero/mobile/hero2.jpg"
-            alt="Lumina Space 2"
-            fill
-            className="object-cover opacity-80"
-          />
-          <Image
-            ref={img3Ref}
-            src="/hero/mobile/hero3.jpg"
-            alt="Lumina Space 3"
-            fill
-            className="object-cover opacity-80"
-          />
-          <div className="absolute inset-0 bg-black/10 z-[1] pointer-events-none" />
+    <section className="w-full h-[100svh] bg-[#fdfbf9] flex flex-col pt-24 px-6 pb-6 overflow-hidden">
+      {/* Header Section */}
+      <div className="flex flex-row justify-between items-end w-full mb-10 relative z-10 shrink-0 gap-2">
+        <h1 className="text-[#333333] font-display text-[52px] sm:text-[64px] font-bold leading-[0.8] tracking-tighter uppercase m-0 p-0 mb-1">
+          LUMINA
+        </h1>
+        <div className="flex flex-col items-end text-right pb-1">
+          <h2 className="text-[#333333] text-[14px] sm:text-lg font-sans font-bold leading-tight mb-2 max-w-[150px]">
+            Creating <span className="text-[#a47b59]">Interiors</span> That Inspire Living
+          </h2>
+          <Link href="/portfolio" className="text-[#a47b59] font-sans font-bold tracking-widest uppercase text-xs sm:text-sm flex items-center hover:opacity-80 transition-opacity border-b border-[#a47b59]/30 pb-0.5">
+            VIEW PORTFOLIO <span className="ml-1">›</span>
+          </Link>
         </div>
+      </div>
 
-        {/* Text 1 */}
-        <div ref={text1Ref} className="absolute inset-0 z-10 p-8 pt-28 flex flex-col justify-between pointer-events-none">
-          <div className="flex flex-col items-start gap-3">
-            <div className="text-white/80 font-sans text-xs font-bold tracking-[0.2em] uppercase mb-4 border-b border-white/30 pb-2 drop-shadow-md">
-              EST --2019
-            </div>
-            <h2 className="text-white font-display text-[32px] sm:text-[40px] font-medium leading-[1.1] tracking-tight drop-shadow-lg">
-              Minimal by design.<br />Intentional by nature.
-            </h2>
-          </div>
-          <div className="pb-12">
-            <h1 className="text-white font-display text-[64px] sm:text-[72px] uppercase tracking-tighter leading-none mb-4 drop-shadow-2xl">
-              LUMINA
-            </h1>
-            <p className="text-white/90 font-sans text-base font-light tracking-wide max-w-[250px] leading-relaxed drop-shadow-md">
-              We see potential where others see chaos.
-            </p>
-          </div>
+      {/* Comparison Slider Section */}
+      <div className="w-full flex-1 relative rounded-2xl overflow-hidden shadow-2xl min-h-0">
+        <ReactCompareSlider
+          itemOne={<ReactCompareSliderImage src="/hero/pc/before.png" alt="Before" className="object-cover w-full h-full" />}
+          itemTwo={<ReactCompareSliderImage src="/hero/pc/after.png" alt="After" className="object-cover w-full h-full" />}
+          className="w-full h-full"
+        />
+      </div>
+    </section>
+  );
+};
+
+const DesktopHero = () => {
+  return (
+    <section className="w-full h-screen bg-[#fdfbf9] flex flex-col pt-20 px-8 md:px-16 lg:px-24 pb-8 overflow-hidden">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-6 relative z-10 shrink-0">
+        <h1 className="text-[#333333] font-display text-[60px] md:text-[100px] lg:text-[140px] font-bold leading-[0.8] tracking-tighter uppercase m-0 p-0">
+          LUMINA
+        </h1>
+        <div className="flex flex-col items-start md:items-end mt-6 md:mt-0 pb-2 md:pb-4">
+          <h2 className="text-[#333333] text-xl md:text-2xl lg:text-3xl font-sans font-bold leading-tight text-left md:text-right max-w-xs md:max-w-sm mb-4">
+            Creating<br/><span className="text-[#a47b59]">Interiors</span> That<br/>Inspire Living
+          </h2>
+          <Link href="/portfolio" className="text-[#a47b59] font-sans font-bold tracking-widest uppercase text-sm flex items-center hover:opacity-80 transition-opacity border-b border-[#a47b59]/30 pb-1">
+            VIEW PORTFOLIO <span className="ml-2">›</span>
+          </Link>
         </div>
+      </div>
 
-        {/* Text 2 */}
-        <div ref={text2Ref} className="absolute inset-0 z-10 p-8 pt-28 flex flex-col justify-end pointer-events-none pb-[120px]">
-          <div className="flex flex-col items-end text-right gap-3">
-            <h2 className="text-white font-display text-[32px] sm:text-[40px] font-medium leading-[1.1] tracking-tight drop-shadow-lg">
-              A blank canvas.<br />Endless possibilities.
-            </h2>
-            <p className="text-white/90 font-sans text-base font-light tracking-wide max-w-[250px] leading-relaxed mt-2 drop-shadow-md">
-              This is where transformation begins.
-            </p>
-          </div>
-        </div>
-
-        {/* Text 3 */}
-        <div ref={text3Ref} className="absolute inset-0 z-10 p-8 flex flex-col justify-center items-center pointer-events-none text-center">
-          <h1 className="text-white font-display text-[72px] sm:text-[84px] uppercase tracking-tighter leading-none mb-10 drop-shadow-2xl">
-            LUMINA
-          </h1>
-          <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white font-medium uppercase tracking-[0.15em] py-[16px] px-[40px] pointer-events-auto transition-all duration-300 hover:bg-white hover:text-[#1c1b1c] rounded-full text-sm shadow-xl">
-            Start Your Project
-          </button>
-        </div>
-
+      {/* Comparison Slider Section */}
+      <div className="w-full flex-1 relative rounded-3xl overflow-hidden shadow-2xl min-h-0">
+        <ReactCompareSlider
+          itemOne={<ReactCompareSliderImage src="/hero/pc/before.png" alt="Before" className="object-cover w-full h-full" />}
+          itemTwo={<ReactCompareSliderImage src="/hero/pc/after.png" alt="After" className="object-cover w-full h-full" />}
+          className="w-full h-full"
+        />
       </div>
     </section>
   );
@@ -131,6 +72,30 @@ const MobileHero = () => {
 
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (!mounted) {
+    return <div className="w-full h-screen bg-[#fdfbf9]" />;
+  }
+
+  return isMobile ? <MobileHero /> : <DesktopHero />;
+}
+
+/**
+ * LEGACY CANVAS HERO
+ * This is the original 720-frame image sequence hero, preserved as requested.
+ * It is currently not rendered, but safely tucked aside here.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const LegacyCanvasHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>(new Array(FRAME_COUNT));
@@ -140,18 +105,8 @@ export default function HeroSection() {
   const state3Ref = useRef<HTMLDivElement>(null);
   const state4Ref = useRef<HTMLDivElement>(null);
 
-  // Resize listener for mobile and canvas
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   // Optimized Chunked Image Sequence Preloader
   useEffect(() => {
-    if (isMobile) return;
-
     const images: HTMLImageElement[] = new Array(FRAME_COUNT);
     imagesRef.current = images;
 
@@ -167,7 +122,6 @@ export default function HeroSection() {
 
     // Lazy load the rest in background chunks using requestIdleCallback to completely free the main thread
     const loadChunk = () => {
-      if (isMobile) return;
       const endFrame = Math.min(currentFrame + 30, FRAME_COUNT);
       for (; currentFrame <= endFrame; currentFrame++) {
         const img = new window.Image();
@@ -192,7 +146,7 @@ export default function HeroSection() {
         setTimeout(loadChunk, 50);
       }
     }
-  }, [isMobile]);
+  }, []);
 
   const renderFrame = useCallback((index: number) => {
     const canvas = canvasRef.current;
@@ -225,15 +179,12 @@ export default function HeroSection() {
 
   // Handle canvas resize
   useEffect(() => {
-    if (isMobile) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const resizeCanvas = () => {
-      // Set logical resolution to window width/height for high quality rendering
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      // Re-render current frame on resize
       const scrollProgress = ScrollTrigger.getById("hero-scroll")?.progress || 0;
       const currentFrame = Math.round(scrollProgress * (FRAME_COUNT - 1));
       renderFrame(currentFrame);
@@ -253,12 +204,10 @@ export default function HeroSection() {
     }
 
     return () => window.removeEventListener("resize", resizeCanvas);
-  }, [isMobile, renderFrame]);
+  }, [renderFrame]);
 
   // Setup GSAP
   useEffect(() => {
-    if (isMobile) return;
-
     gsap.registerPlugin(ScrollTrigger);
     let ctx: gsap.Context;
 
@@ -276,7 +225,6 @@ export default function HeroSection() {
       }
 
       ctx = gsap.context(() => {
-        // Image Sequence Animation
         const frameObj = { frame: 0 };
 
         gsap.to(frameObj, {
@@ -288,12 +236,11 @@ export default function HeroSection() {
             trigger: containerRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: 1, // Slight scrub smoothing for butter flow
+            scrub: 1,
           },
           onUpdate: () => renderFrame(frameObj.frame)
         });
 
-        // Text Animations Timeline
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
@@ -333,11 +280,7 @@ export default function HeroSection() {
       if (ctx) ctx.revert();
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, [isMobile, renderFrame]);
-
-  if (isMobile) {
-    return <MobileHero />;
-  }
+  }, [renderFrame]);
 
   return (
     <section ref={containerRef} className="relative w-full h-[800vh]">
@@ -446,4 +389,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+};
