@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d9d9dd",
+                    "surface-bright-custom": "#071829",
+                    "on-tertiary-fixed-variant": "#4c463d",
+                    "secondary-container": "#f1f5ff",
+                    "on-tertiary-container": "#8a8379",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e7",
+                    "surface-variant": "#e5e2e2",
+                    "on-surface": "#1c1b1c",
+                    "primary-fixed-dim": "#c8c5cc",
+                    "primary-container": "#1b1b20",
+                    "tertiary-fixed": "#ebe1d5",
+                    "secondary-fixed": "#d9e2ff",
+                    "outline": "#d9d9dd",
+                    "surface-container": "#f1eded",
+                    "inverse-surface": "#313030",
+                    "tertiary-container": "#ffad9b",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#75758a",
+                    "on-secondary-container": "#fefcff",
+                    "primary-fixed": "#e4e1e8",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#00419d",
+                    "on-primary-fixed": "#1b1b20",
+                    "surface-bright": "#fdf8f8",
+                    "on-primary-fixed-variant": "#47464c",
+                    "on-tertiary-fixed": "#1f1b14",
+                    "inverse-on-surface": "#f4f0f0",
+                    "primary": "#000000",
+                    "surface-dim": "#ddd9d9",
+                    "on-secondary-fixed": "#001945",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f2f2",
+                    "tertiary-fixed-dim": "#cec5ba",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b0c6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1c",
+                    "secondary": "#0055c7",
+                    "surface": "#fdf8f8",
+                    "tertiary": "#ff7759",
+                    "surface-tint": "#5f5e64",
+                    "inverse-primary": "#c8c5cc",
+                    "outline-variant": "#c8c5cb",
+                    "background": "#fdf8f8",
+                    "on-primary-container": "#848389",
+                    "surface-dim-custom": "#003c33"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-medium": [
+                            "Space Grotesk"
+                    ],
+                    "body-large": [
+                            "Inter"
+                    ],
+                    "label-large": [
+                            "Space Grotesk"
+                    ],
+                    "headline-large": [
+                            "Inter"
+                    ],
+                    "display-large": [
+                            "Space Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "display-medium": [
+                            "72px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "-1.44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-large": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-large": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.71",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-large": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.48px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-large": [
+                            "96px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "-1.92px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fdf8f8; /* background */
+            color: #1c1b1c; /* on-background */
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-800 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<div class="font-['Space_Grotesk'] text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">
+                Lumina
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-900 dark:text-zinc-50 border-b-2 border-zinc-900 dark:border-zinc-50 pb-1" href="#">
+                    Portfolio
+                </a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">
+                    Process
+                </a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">
+                    Materials
+                </a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">
+                    Archive
+                </a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">
+                    Journal
+                </a>
+</div>
+<button class="bg-zinc-900 text-zinc-50 px-6 py-3 rounded-full font-['Inter'] text-[12px] uppercase font-medium tracking-wide hover:bg-zinc-800 transition-colors">
+                Consultation
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-12 max-w-[1440px] mx-auto w-full">
+<!-- Header -->
+<header class="mb-24 mt-12">
+<h1 class="font-display-large text-display-large text-on-background mb-8">Portfolio</h1>
+<p class="font-body-large text-body-large text-on-surface-variant max-w-2xl">A curated selection of interior spaces, demonstrating our commitment to architectural integrity, material truth, and spatial harmony.</p>
+</header>
+<!-- Filters -->
+<section class="mb-24">
+<div class="flex flex-wrap gap-4">
+<button class="bg-tertiary text-on-tertiary px-6 py-2 rounded-full font-label-large text-label-large hover:opacity-90 transition-opacity">All Projects</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-large text-label-large hover:bg-tertiary hover:text-on-tertiary transition-colors outline outline-1 outline-outline">Residential</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-large text-label-large hover:bg-tertiary hover:text-on-tertiary transition-colors outline outline-1 outline-outline">Commercial</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-large text-label-large hover:bg-tertiary hover:text-on-tertiary transition-colors outline outline-1 outline-outline">Hospitality</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-large text-label-large hover:bg-tertiary hover:text-on-tertiary transition-colors outline outline-1 outline-outline">Restoration</button>
+</div>
+</section>
+<!-- Section 1: Index (Research Table) -->
+<section class="mb-32">
+<div class="border-b border-outline mb-8 pb-4 flex justify-between items-end">
+<h2 class="font-display-medium text-display-medium text-on-background">Index</h2>
+<span class="font-label-large text-label-large text-on-surface-variant uppercase tracking-widest">Chronological</span>
+</div>
+<div class="w-full">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-4 border-b border-outline pb-4 mb-4 font-label-large text-label-large text-on-surface-variant uppercase">
+<div class="col-span-1">Year</div>
+<div class="col-span-4">Project Name</div>
+<div class="col-span-3">Location</div>
+<div class="col-span-3">Category</div>
+<div class="col-span-1 text-right">Scale</div>
+</div>
+<!-- Table Rows -->
+<div class="group grid grid-cols-12 gap-4 border-b border-outline/50 py-6 font-body-large text-body-large text-on-background hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-1 text-on-surface-variant">2024</div>
+<div class="col-span-4 font-medium">The Glass Pavilion</div>
+<div class="col-span-3 text-on-surface-variant">Kyoto, JP</div>
+<div class="col-span-3 text-tertiary">Residential</div>
+<div class="col-span-1 text-right text-on-surface-variant">420m²</div>
+</div>
+<div class="group grid grid-cols-12 gap-4 border-b border-outline/50 py-6 font-body-large text-body-large text-on-background hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-1 text-on-surface-variant">2023</div>
+<div class="col-span-4 font-medium">Brutalist Loft</div>
+<div class="col-span-3 text-on-surface-variant">Berlin, DE</div>
+<div class="col-span-3 text-tertiary">Residential</div>
+<div class="col-span-1 text-right text-on-surface-variant">180m²</div>
+</div>
+<div class="group grid grid-cols-12 gap-4 border-b border-outline/50 py-6 font-body-large text-body-large text-on-background hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-1 text-on-surface-variant">2023</div>
+<div class="col-span-4 font-medium">Aesop Flagship</div>
+<div class="col-span-3 text-on-surface-variant">New York, US</div>
+<div class="col-span-3 text-tertiary">Commercial</div>
+<div class="col-span-1 text-right text-on-surface-variant">350m²</div>
+</div>
+<div class="group grid grid-cols-12 gap-4 border-b border-outline/50 py-6 font-body-large text-body-large text-on-background hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-1 text-on-surface-variant">2022</div>
+<div class="col-span-4 font-medium">Monolith Hotel</div>
+<div class="col-span-3 text-on-surface-variant">Swiss Alps, CH</div>
+<div class="col-span-3 text-tertiary">Hospitality</div>
+<div class="col-span-1 text-right text-on-surface-variant">4,200m²</div>
+</div>
+<div class="group grid grid-cols-12 gap-4 border-b border-outline/50 py-6 font-body-large text-body-large text-on-background hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="col-span-1 text-on-surface-variant">2021</div>
+<div class="col-span-4 font-medium">Cathedral Adaptive Reuse</div>
+<div class="col-span-3 text-on-surface-variant">London, UK</div>
+<div class="col-span-3 text-tertiary">Restoration</div>
+<div class="col-span-1 text-right text-on-surface-variant">1,800m²</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Visual Archive (Editorial Grid) -->
+<section>
+<div class="border-b border-outline mb-12 pb-4 flex justify-between items-end">
+<h2 class="font-display-medium text-display-medium text-on-background">Visual Archive</h2>
+<span class="font-label-large text-label-large text-on-surface-variant uppercase tracking-widest">Selected Works</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-surface-container-low rounded-[22px] overflow-hidden mb-4 relative">
+<img alt="Interior view of a modern living space with large windows, natural light, minimalist furniture, and concrete accents" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Interior view of a modern living space with large windows, natural light, minimalist furniture, and concrete accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIFMSjnCeaSop6tV-ukUOyBiY2Y3eeenYMLDS_d-YozaGNBeccKTVWZD-RJYG2qLrdmdnP5xZ-DDyUIq3bQ-PDVtYrc0krvt9O8GSMo_WaEcsSWH5NGPHLfSPzRYxA2xy9ZQ_-_xK_3LtUdjZxyFpbVIxnRqBkFp_wc62JWJmr-yGDWGVsSOCpy7SMcV1qEKD7JpmQ72sFUm43Z4eQYQlQH8qlmGiaDsVPENjbhpn2yOSF-vbTQJe2xEUIUv-wR53m9sMGN8AycUzn"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div>
+<h3 class="font-label-large text-label-large text-on-background uppercase mb-1">The Glass Pavilion</h3>
+<p class="font-body-large text-body-large text-on-surface-variant text-sm">Residential / 2024</p>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group cursor-pointer lg:-mt-16">
+<div class="w-full aspect-[4/5] bg-surface-container-low rounded-[22px] overflow-hidden mb-4 relative">
+<img alt="Minimalist bedroom with dark textured walls, warm lighting, low-profile bed, and architectural details" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist bedroom with dark textured walls, warm lighting, low-profile bed, and architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi3MBIJ3NPRZUi0UJyIdyT16g6UqXpgNZzmoN8jhMtETKACnb0fB1jAYjoQZ_GbL6-9yx7AsIQzk8LKilTndMFYaexYlV8VEp8NW1NCVlTT0zdcVZf7iAfZ84QKNan-F4J15TgVAbyhAvv2UuCIQF0p5XHKiACzicDbOVE0QzXKTrhXS1l84SbS5ips-YrQ4ZLmMlZStRHktB1hgXsYTlcvHXRSGT1aw7JT2m_TklXOe-jW3dszSYRQJaXPnlIf_-fYSNr-FUByxJn"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div>
+<h3 class="font-label-large text-label-large text-on-background uppercase mb-1">Brutalist Loft</h3>
+<p class="font-body-large text-body-large text-on-surface-variant text-sm">Residential / 2023</p>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-surface-container-low rounded-[22px] overflow-hidden mb-4 relative">
+<img alt="Commercial retail space featuring clean lines, natural stone displays, soft diffused lighting, and minimal product placement" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Commercial retail space featuring clean lines, natural stone displays, soft diffused lighting, and minimal product placement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhhnj8WQ3vdHdoRyvuzoyyyYs1j4hx49Osg8TLi8moLI0vmtuTbV3tcq_V1A5Nrn21ZcTTo11BlZJJCuOgizErRBn7KE-Mw8JPerUiRWNnTXdrtn6_nm-AslzJog8p4t2IxF9ToSzSQVbwlKKxs4lraPbw_sXn053cvmUcKPo5isRCZP-mnW9OxM0a5ttWlMYIPSXowNAz2BTjZj2BdQsl82yDkGB-Wg2QHm3mEa6xCVa-M1W-whc5HkkcL1BvFWryZUzye7NHEnHx"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div>
+<h3 class="font-label-large text-label-large text-on-background uppercase mb-1">Aesop Flagship</h3>
+<p class="font-body-large text-body-large text-on-surface-variant text-sm">Commercial / 2023</p>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group cursor-pointer md:col-span-2 lg:col-span-2">
+<div class="w-full aspect-[16/9] bg-surface-container-low rounded-[22px] overflow-hidden mb-4 relative">
+<img alt="Expansive hotel lobby in the mountains, featuring warm timber, massive stone fireplace, and panoramic snow views" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Expansive hotel lobby in the mountains, featuring warm timber, massive stone fireplace, and panoramic snow views" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNDy2kCYwgbN9pNi0LK9IcZqvv3KmHAI3kMxowji5MakXfp2DFw1Xu19xusmop5PB8jnmHaaCvDsba5guJzLZmUEcD4uhY_zh8d7-2p1ZQbC8gDj-tNdx_swDR8DYPMfhDLCt7XtqsEJA7E9wgLNSsyQTmSbjktCLTNa63GfnNcPht0QB6-q4-mWM0wTnbILfuZSUBxz6cD8VkgXKzw2bzLsTzsjx0E_8zzN5ZnLwOuH_hfIc1YhMrtvsX8k4SHFZU7FVvaANG8L6"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div>
+<h3 class="font-label-large text-label-large text-on-background uppercase mb-1">Monolith Hotel</h3>
+<p class="font-body-large text-body-large text-on-surface-variant text-sm">Hospitality / 2022</p>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group cursor-pointer lg:-mt-32">
+<div class="w-full aspect-[4/5] bg-surface-container-low rounded-[22px] overflow-hidden mb-4 relative">
+<img alt="Restored architectural interior with high arched ceilings, modern lighting fixtures, and exposed historic brickwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Restored architectural interior with high arched ceilings, modern lighting fixtures, and exposed historic brickwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJnW9QNc1eMsP7NGl3Rw4TqpJ0XfF0pjCQwtRwu530FaWedApMND2i2DSLIxOyjGXWcXipIUticPbQ9qPcimFvRkFqdm44tReV2FxfZR3wi1tJp7TM44B7nGn_mWX0VZ6GZjsuGzqIWecDnPr30zQpcXmieI0TcdDFKcSOC88-Gxbn0uX8O3dIzmn0x3zaE5A-plbvByE_yAOqji3zy9C1tUyIK-N8jgsuUKDs-BuH7U3hqCA3d1mj6WgzhcyLOxvCP-Kuq9Zcwb_y"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div>
+<h3 class="font-label-large text-label-large text-on-background uppercase mb-1">Cathedral Adaptive Reuse</h3>
+<p class="font-body-large text-body-large text-on-surface-variant text-sm">Restoration / 2021</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 dark:bg-black w-full pt-24 pb-12 border-t border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 max-w-[1440px] mx-auto">
+<div class="md:col-span-2">
+<span class="font-['Space_Grotesk'] text-5xl font-black uppercase tracking-tighter text-zinc-50 mb-8 block">
+                    Lumina
+                </span>
+<p class="font-['Inter'] text-sm leading-relaxed text-zinc-50 max-w-sm">
+                    Architectural interior design studio specializing in minimalist, brutalist, and historically significant spaces.
+                </p>
+</div>
+<div>
+<h4 class="font-label-large text-label-large text-zinc-50 uppercase mb-4 tracking-widest">Connect</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Instagram</a></li>
+<li><a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-large text-label-large text-zinc-50 uppercase mb-4 tracking-widest">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a></li>
+<li><a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 max-w-[1440px] mx-auto mt-16 pt-8 border-t border-zinc-800/50">
+<p class="font-['Inter'] text-sm leading-relaxed text-zinc-500">
+                © 2024 Lumina Collective. Architectural Integrity.
+            </p>
+</div>
+</footer>
+</body></html>

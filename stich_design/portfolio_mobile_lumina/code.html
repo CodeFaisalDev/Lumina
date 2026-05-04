@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#d9d9dd",
+                        "surface-bright-custom": "#071829",
+                        "on-tertiary-fixed-variant": "#4c463d",
+                        "secondary-container": "#f1f5ff",
+                        "on-tertiary-container": "#8a8379",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-variant": "#e5e2e2",
+                        "on-surface": "#1c1b1c",
+                        "primary-fixed-dim": "#c8c5cc",
+                        "primary-container": "#1b1b20",
+                        "tertiary-fixed": "#ebe1d5",
+                        "secondary-fixed": "#d9e2ff",
+                        "outline": "#d9d9dd",
+                        "surface-container": "#f1eded",
+                        "inverse-surface": "#313030",
+                        "tertiary-container": "#ffad9b",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#75758a",
+                        "on-secondary-container": "#fefcff",
+                        "primary-fixed": "#e4e1e8",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#00419d",
+                        "on-primary-fixed": "#1b1b20",
+                        "surface-bright": "#fdf8f8",
+                        "on-primary-fixed-variant": "#47464c",
+                        "on-tertiary-fixed": "#1f1b14",
+                        "inverse-on-surface": "#f4f0f0",
+                        "primary": "#000000",
+                        "surface-dim": "#ddd9d9",
+                        "on-secondary-fixed": "#001945",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f2f2f2",
+                        "tertiary-fixed-dim": "#cec5ba",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b0c6ff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1b1c",
+                        "secondary": "#0055c7",
+                        "surface": "#fdf8f8",
+                        "tertiary": "#ff7759",
+                        "surface-tint": "#5f5e64",
+                        "inverse-primary": "#c8c5cc",
+                        "outline-variant": "#c8c5cb",
+                        "background": "#fdf8f8",
+                        "on-primary-container": "#848389",
+                        "surface-dim-custom": "#003c33"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-medium": ["Space Grotesk"],
+                        "body-large": ["Inter"],
+                        "label-large": ["Space Grotesk"],
+                        "headline-large": ["Inter"],
+                        "display-large": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-medium": ["72px", { "lineHeight": "1.0", "letterSpacing": "-1.44px", "fontWeight": "400" }],
+                        "body-large": ["18px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-large": ["14px", { "lineHeight": "1.71", "letterSpacing": "0", "fontWeight": "500" }],
+                        "headline-large": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.48px", "fontWeight": "400" }],
+                        "display-large": ["96px", { "lineHeight": "1.0", "letterSpacing": "-1.92px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-zinc-200 dark:border-zinc-800 flat no shadows">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<div class="font-['Space_Grotesk'] text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">Lumina</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-zinc-900 dark:text-zinc-50 border-b-2 border-zinc-900 dark:border-zinc-50 pb-1 font-['Inter'] font-medium tracking-tight uppercase text-[12px] scale-95 duration-200 active:scale-90" href="#">Portfolio</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] font-medium tracking-tight uppercase text-[12px] scale-95 duration-200 active:scale-90" href="#">Process</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] font-medium tracking-tight uppercase text-[12px] scale-95 duration-200 active:scale-90" href="#">Materials</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] font-medium tracking-tight uppercase text-[12px] scale-95 duration-200 active:scale-90" href="#">Archive</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] font-medium tracking-tight uppercase text-[12px] scale-95 duration-200 active:scale-90" href="#">Journal</a>
+</div>
+<button class="hidden md:block bg-primary text-on-primary rounded-xl px-6 py-3 font-label-large text-label-large hover:bg-zinc-800 transition-colors">
+                Consultation
+            </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-zinc-900 p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-xl px-gutter md:px-lg max-w-container-max mx-auto">
+<!-- Header -->
+<header class="mb-lg">
+<h1 class="font-display-medium text-display-medium mb-sm text-primary">Selected Works</h1>
+<p class="font-body-large text-body-large text-on-surface-variant max-w-2xl">
+                An archive of structural interventions and material studies, prioritizing geometric rigor and brutalist simplicity.
+            </p>
+</header>
+<!-- Taxonomy Chips (Horizontal Scroll) -->
+<section class="mb-lg overflow-hidden">
+<div class="flex gap-sm overflow-x-auto hide-scrollbar pb-xs">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap">All Projects</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap hover:bg-surface-variant transition-colors border border-outline">Residential</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap hover:bg-surface-variant transition-colors border border-outline">Commercial</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap hover:bg-surface-variant transition-colors border border-outline">Material Studies</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap hover:bg-surface-variant transition-colors border border-outline">Exhibition</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full font-label-large text-label-large whitespace-nowrap hover:bg-surface-variant transition-colors border border-outline">Conceptual</button>
+</div>
+</section>
+<!-- Research Table Index (Stacked List) -->
+<section class="mb-xl border-t border-outline">
+<!-- Index Item 1 -->
+<div class="group border-b border-outline py-md flex flex-col md:flex-row md:items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-lg mb-sm md:mb-0">
+<span class="font-label-large text-label-large text-on-surface-variant w-16">001</span>
+<h2 class="font-display-medium text-[32px] leading-tight md:text-headline-large md:font-headline-large text-primary">Villa Noir</h2>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-body-large text-body-large text-on-surface-variant hidden md:block">Kyoto, JP</span>
+<span class="font-label-large text-label-large bg-surface-container-highest px-3 py-1 rounded-full">2023</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-2 duration-300" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Index Item 2 -->
+<div class="group border-b border-outline py-md flex flex-col md:flex-row md:items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-lg mb-sm md:mb-0">
+<span class="font-label-large text-label-large text-on-surface-variant w-16">002</span>
+<h2 class="font-display-medium text-[32px] leading-tight md:text-headline-large md:font-headline-large text-primary">Concrete Canvas</h2>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-body-large text-body-large text-on-surface-variant hidden md:block">Berlin, DE</span>
+<span class="font-label-large text-label-large bg-surface-container-highest px-3 py-1 rounded-full">2022</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-2 duration-300" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Index Item 3 -->
+<div class="group border-b border-outline py-md flex flex-col md:flex-row md:items-center justify-between hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-baseline gap-xs md:gap-lg mb-sm md:mb-0">
+<span class="font-label-large text-label-large text-on-surface-variant w-16">003</span>
+<h2 class="font-display-medium text-[32px] leading-tight md:text-headline-large md:font-headline-large text-primary">The Foundry</h2>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-body-large text-body-large text-on-surface-variant hidden md:block">London, UK</span>
+<span class="font-label-large text-label-large bg-surface-container-highest px-3 py-1 rounded-full">2023</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-2 duration-300" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Visual Archive (Single Column Mobile, Grid Desktop) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Archive Card 1 -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low border border-outline">
+<img alt="Interior space" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0" data-alt="Minimalist modern interior with dark concrete walls, natural wood accents, and sharp geometric lighting fixtures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMLD9jYjaFDAnauiE76sw6ZCYuku-lcfhVKihMDEi2NNZSVzau3P1TWE5qrw9zxQjlTMSaZG9mFZJgq3qp5xaYZeP9jeKXdaeAPF6nEXCrxXDCEBjKWB83mQ7SEbrIxmEpdoZxpw34FWhlyU24WNKeHW6OK1fm1--Z79ukYXKZhG14ZzO3aWrz6wRE4NpinCGQNKIhqznySoiy5NzuYb2WutQCrdmBaZNgyT-0Q2mE2RNs8mp3otL79gTYng0cNNzvxskXUZctPeqo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-0 left-0 p-md w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+<h3 class="font-display-medium text-[32px] text-white leading-tight">Villa Noir</h3>
+<p class="font-label-large text-label-large text-zinc-300 mt-2">Kyoto / Residential</p>
+</div>
+</div>
+<!-- Archive Card 2 -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low border border-outline">
+<img alt="Concrete architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0" data-alt="Brutalist concrete architecture with harsh shadow lines and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn7QWaMNIXdZUG8PgizN6ntBM5oriXElHEc5z5UrjIM36sSIoo8ilZLIqCuYBbLgEXU2RIM5aztH8D9vrcqJAAmmCbeJtppRQDlipFJM_p2s6-FBAzBTAgsufcobek-56plEzLrr49zXt--fIUMfl0V5p33fMOs2ol0avpsdiwU8T_RlcH57aWfK8NBrnHT6m3JwM9mOnzuV3GTVXK7axm1ec-RtIXC5cob5IeWHMKBgPDFZaPMp9chrWXrGgk5e1DMV7CGYPjImEE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-0 left-0 p-md w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+<h3 class="font-display-medium text-[32px] text-white leading-tight">Concrete Canvas</h3>
+<p class="font-label-large text-label-large text-zinc-300 mt-2">Berlin / Commercial</p>
+</div>
+</div>
+<!-- Archive Card 3 -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container-low border border-outline md:col-span-2 md:aspect-[21/9]">
+<img alt="Office space" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0" data-alt="Spacious minimalist office interior with large windows, natural light, and structural steel elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn535XrRZK6amctqHOjNpMsvhNCgTLYTcJDzvNye__v9rWcr8GJnOIHjVq1ZVjEzt5yTU0VjyNzXZKEm53gWdLUlY17gPHU80U3tqoW84uws6LiGRx0PzyTXiZ6XkXxiGN0GE2_Tt4ZVhMI1ai1cD2I2nQbziNzgY6r8L2IAID9srNbQf9rGUHJss6jKBWQ3i5ncA-6Y1_gK4f7iKEiteitHAIc1Tvy2fCtsh9qk4ElwqMlQVN5XtHhlaFi7gGTH0j60ZkZmdOiji7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-0 left-0 p-md w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+<h3 class="font-display-medium text-[32px] text-white leading-tight">The Foundry</h3>
+<p class="font-label-large text-label-large text-zinc-300 mt-2">London / Workspace</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 dark:bg-black w-full pt-24 pb-12 border-t border-zinc-800 flat">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 max-w-[1440px] mx-auto">
+<div class="md:col-span-2">
+<span class="font-['Space_Grotesk'] text-5xl font-black uppercase tracking-tighter text-zinc-50 mb-8 block">Lumina</span>
+<p class="font-['Inter'] text-sm leading-relaxed text-zinc-50 max-w-sm">
+                    © 2024 Lumina Collective. Architectural Integrity.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-large text-label-large text-zinc-500 uppercase tracking-widest mb-2">Connect</span>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100 hover:text-zinc-100 transition-opacity" href="#">Instagram</a>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100 hover:text-zinc-100 transition-opacity" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-large text-label-large text-zinc-500 uppercase tracking-widest mb-2">Legal</span>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100 hover:text-zinc-100 transition-opacity" href="#">Privacy</a>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100 hover:text-zinc-100 transition-opacity" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

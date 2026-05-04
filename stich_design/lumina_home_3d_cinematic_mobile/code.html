@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina | Crafting Space</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d9d9dd",
+                    "surface-bright-custom": "#071829",
+                    "on-tertiary-fixed-variant": "#4c463d",
+                    "secondary-container": "#f1f5ff",
+                    "on-tertiary-container": "#8a8379",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#ebe7e7",
+                    "surface-variant": "#e5e2e2",
+                    "on-surface": "#1c1b1c",
+                    "primary-fixed-dim": "#c8c5cc",
+                    "primary-container": "#1b1b20",
+                    "tertiary-fixed": "#ebe1d5",
+                    "secondary-fixed": "#d9e2ff",
+                    "outline": "#d9d9dd",
+                    "surface-container": "#f1eded",
+                    "inverse-surface": "#313030",
+                    "tertiary-container": "#ffad9b",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#75758a",
+                    "on-secondary-container": "#fefcff",
+                    "primary-fixed": "#e4e1e8",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#00419d",
+                    "on-primary-fixed": "#1b1b20",
+                    "surface-bright": "#fdf8f8",
+                    "on-primary-fixed-variant": "#47464c",
+                    "on-tertiary-fixed": "#1f1b14",
+                    "inverse-on-surface": "#f4f0f0",
+                    "primary": "#000000",
+                    "surface-dim": "#ddd9d9",
+                    "on-secondary-fixed": "#001945",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f2f2",
+                    "tertiary-fixed-dim": "#cec5ba",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b0c6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1c",
+                    "secondary": "#0055c7",
+                    "surface": "#fdf8f8",
+                    "tertiary": "#ff7759",
+                    "surface-tint": "#5f5e64",
+                    "inverse-primary": "#c8c5cc",
+                    "outline-variant": "#c8c5cb",
+                    "background": "#fdf8f8",
+                    "on-primary-container": "#848389",
+                    "surface-dim-custom": "#003c33"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-medium": [
+                            "Space Grotesk"
+                    ],
+                    "body-large": [
+                            "Inter"
+                    ],
+                    "label-large": [
+                            "Space Grotesk"
+                    ],
+                    "headline-large": [
+                            "Inter"
+                    ],
+                    "display-large": [
+                            "Space Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "display-medium": [
+                            "72px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "-1.44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-large": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-large": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.71",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-large": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.48px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-large": [
+                            "96px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "-1.92px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      perspective: 1000px;
+    }
+    
+    .layer-base {
+      transform: translateZ(0);
+    }
+    
+    .layer-float {
+      transform: translateZ(50px) scale(0.95);
+    }
+    
+    .layer-deep {
+      transform: translateZ(-100px) scale(1.1);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-50 font-body-large min-h-screen antialiased overflow-x-hidden relative selection:bg-zinc-800 selection:text-white">
+<nav class="fixed top-6 left-6 right-6 z-50 rounded-2xl bg-white/10 dark:bg-black/20 backdrop-blur-2xl border border-white/20 shadow-2xl transition-all duration-500 hover:bg-white/20 layer-float">
+<div class="flex justify-between items-center px-6 py-4">
+<span class="font-['Space_Grotesk'] text-2xl font-bold tracking-tighter text-white drop-shadow-md">Lumina</span>
+<button class="text-white p-2 hover:bg-white/10 rounded-full transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative pb-xl w-full flex flex-col gap-8">
+<section class="min-h-[100svh] flex flex-col justify-end relative rounded-b-[3rem] overflow-hidden shadow-2xl layer-base">
+<div class="absolute inset-0 z-0 w-full h-full layer-deep">
+<img class="w-full h-full object-cover" data-alt="Minimalist brutalist living area with poured concrete walls, warm oak flooring, soft diffused lighting, and a single black leather designer lounge chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW9TB1U0dPrru30ucQQSOCYI5RdB4ICg84nrLJiAHbJhJyqhoUI_D1_3ez3hlG1lQnL_9TMySvgmjRcIwUEyNKlkcS87oskMOWKmbDgRKiDIuZDJIKpHf0AF-5WLjg8lZBNwx0bxUmUbDfs2zgKY1siub-LSycCk0fBJCOBhxe_wIR4AkSknasyhh6B_w0y_wfPWfMGEmALohAwLKfKQNe2PFpTZbDou3Q-5Dr20r4HaMHYgnv-daZOYGC38nGbYbF4TELilHjxqBW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 px-6 pb-20 pt-32 flex flex-col gap-8 w-full layer-float animate-[fade-in-up_1s_ease-out_forwards]">
+<h1 class="font-display-large text-[22vw] leading-[0.85] tracking-[-0.04em] text-white uppercase drop-shadow-xl filter">CRAFTING<br/>SPACE</h1>
+<div class="bg-black/30 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl">
+<p class="font-body-large text-lg text-zinc-300 leading-relaxed">
+                        Architectural rigor meets minimalist precision. We sculpt interior environments that balance raw materiality with curated, high-end editorial aesthetics.
+                    </p>
+<button class="mt-8 flex items-center gap-3 text-white font-label-large uppercase tracking-widest hover:pl-2 transition-all duration-300 group/btn bg-white/10 px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 w-max">
+                        Explore
+                        <span class="material-symbols-outlined transform group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto flex flex-col gap-12 w-full px-4 layer-base z-20">
+<div class="px-2 flex justify-between items-baseline mb-4">
+<h2 class="font-label-large text-sm text-zinc-400 uppercase tracking-widest">Featured Works</h2>
+<span class="font-label-large text-sm text-zinc-600">04</span>
+</div>
+<div class="flex flex-col gap-8">
+<article class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group layer-base transform transition-transform duration-700 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 layer-deep" data-alt="High-end modern kitchen with stark monolithic marble island, matte black cabinetry, and sheer curtains filtering bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOgW8BlWAuJLPCbWiLu60qV4jZi8uVue8i9NG6mMLnH5PImqPJoQkNBErfRCGQZF9v3dGsxEqTmmrtz_E1K8VJ9rgntEz4PjiatfjdKOygXFvvPWi3CHMPXNhCJ12SaqStYS_chP_TneH8UtGGfJM6yLmKjxROsj-MeVJXUg3Yk_EeJhRvtbVS-bpqv7nhcwVxJ82kvt_cVRzxzUtqhKW4Ph42FVc1ZuPQs3elDHbTJb0_edvNYyFuSzXwnWFwMLZnm4zX9u0nT_Uj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col gap-3 layer-float">
+<div class="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full w-max border border-white/20">
+<span class="font-label-large text-xs text-white uppercase tracking-widest">Residential</span>
+</div>
+<h3 class="font-display-medium text-4xl text-white drop-shadow-lg">The Monolith House</h3>
+</div>
+</article>
+<article class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group layer-base transform transition-transform duration-700 hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 layer-deep" data-alt="Avant-garde sparse dining room with a raw edge timber table, structural steel chairs, and vast white gallery walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ydeGGR-Ex8ODntM2WIqnTsoc7teYrKucDjeOc15bFxAZ15RRRHqcGdwvns31H0xDQ4LcBt4XxXCMKyMA9QuORQ9wQI62RtLHdK6gg5GyV-ilIizQeMew4EjJCgOmzOx7OwJEjz_veKKEOj8bFlukP_D1OWEje-sqzNZQdN7hRG25QY_q9kI0LHOadZeBj02QydFXMHr7pORzExy5VjivrW1RTa2YzbPfpIfUppOSGkuTgHivl19TA6q2nCPZb70UXbJqtEHlf-8Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex flex-col gap-3 layer-float">
+<div class="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full w-max border border-white/20">
+<span class="font-label-large text-xs text-white uppercase tracking-widest">Commercial</span>
+</div>
+<h3 class="font-display-medium text-4xl text-white drop-shadow-lg">Gallery V</h3>
+</div>
+</article>
+</div>
+</section>
+<section class="py-24 px-6 mt-16 bg-zinc-900 rounded-[3rem] mx-4 relative overflow-hidden shadow-2xl border border-zinc-800 layer-base z-10">
+<div class="absolute top-0 right-0 w-[100vw] h-[100vw] bg-zinc-800/30 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 mix-blend-screen pointer-events-none layer-deep"></div>
+<div class="max-w-container-max mx-auto flex flex-col">
+<div class="pb-8 mb-12 relative z-10">
+<h2 class="font-label-large text-xs text-zinc-400 uppercase tracking-widest border-b border-zinc-800 pb-4">Philosophy</h2>
+</div>
+<div class="flex flex-col gap-20 relative z-10">
+<div class="flex flex-col gap-4 group layer-float">
+<span class="font-display-medium text-6xl text-zinc-800 leading-none group-hover:text-zinc-500 transition-colors duration-700">01</span>
+<h3 class="font-display-medium text-4xl leading-[1] tracking-[-0.04em] text-white uppercase">Reduction.</h3>
+<p class="font-body-large text-lg text-zinc-400 pt-2 leading-relaxed">
+                            Stripping away the superfluous to reveal the essential structural logic of a space. True luxury lies in the discipline of omission.
+                        </p>
+</div>
+<div class="flex flex-col gap-4 group layer-float">
+<span class="font-display-medium text-6xl text-zinc-800 leading-none group-hover:text-zinc-500 transition-colors duration-700">02</span>
+<h3 class="font-display-medium text-4xl leading-[1] tracking-[-0.04em] text-white uppercase">Materiality.</h3>
+<p class="font-body-large text-lg text-zinc-400 pt-2 leading-relaxed">
+                            Honest application of raw materials—concrete, steel, timber, and stone—allowed to age, patina, and ground the environment.
+                        </p>
+</div>
+<div class="flex flex-col gap-4 group layer-float">
+<span class="font-display-medium text-6xl text-zinc-800 leading-none group-hover:text-zinc-500 transition-colors duration-700">03</span>
+<h3 class="font-display-medium text-4xl leading-[1] tracking-[-0.04em] text-white uppercase">Light.</h3>
+<p class="font-body-large text-lg text-zinc-400 pt-2 leading-relaxed">
+                            Treating natural and artificial illumination as an active architectural material to define volume and texture.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full pt-16 pb-12 px-6 bg-black layer-base relative z-0">
+<div class="flex flex-col gap-12 max-w-[1440px] mx-auto">
+<div>
+<span class="font-['Space_Grotesk'] text-4xl font-black uppercase tracking-tighter text-zinc-50 mb-8 block drop-shadow-md">Lumina</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-sm text-zinc-400 hover:text-white transition-colors" href="#">Instagram</a>
+<a class="font-['Inter'] text-sm text-zinc-400 hover:text-white transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-sm text-zinc-400 hover:text-white transition-colors" href="#">Privacy</a>
+<a class="font-['Inter'] text-sm text-zinc-400 hover:text-white transition-colors" href="#">Terms</a>
+</div>
+</div>
+<div class="mt-8 border-t border-zinc-900 pt-8">
+<p class="font-['Inter'] text-xs text-zinc-600">© 2024 Lumina Collective. Architectural Integrity.</p>
+</div>
+</div>
+</footer>
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(2rem) translateZ(50px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateZ(50px) scale(0.95);
+    }
+  }
+</style>
+</body></html>

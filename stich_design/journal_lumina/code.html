@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina - Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#d9d9dd",
+                      "surface-bright-custom": "#071829",
+                      "on-tertiary-fixed-variant": "#4c463d",
+                      "secondary-container": "#f1f5ff",
+                      "on-tertiary-container": "#8a8379",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#ebe7e7",
+                      "surface-variant": "#e5e2e2",
+                      "on-surface": "#1c1b1c",
+                      "primary-fixed-dim": "#c8c5cc",
+                      "primary-container": "#1b1b20",
+                      "tertiary-fixed": "#ebe1d5",
+                      "secondary-fixed": "#d9e2ff",
+                      "outline": "#d9d9dd",
+                      "surface-container": "#f1eded",
+                      "inverse-surface": "#313030",
+                      "tertiary-container": "#ffad9b",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#75758a",
+                      "on-secondary-container": "#fefcff",
+                      "primary-fixed": "#e4e1e8",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#00419d",
+                      "on-primary-fixed": "#1b1b20",
+                      "surface-bright": "#fdf8f8",
+                      "on-primary-fixed-variant": "#47464c",
+                      "on-tertiary-fixed": "#1f1b14",
+                      "inverse-on-surface": "#f4f0f0",
+                      "primary": "#000000",
+                      "surface-dim": "#ddd9d9",
+                      "on-secondary-fixed": "#001945",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f2f2f2",
+                      "tertiary-fixed-dim": "#cec5ba",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#b0c6ff",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1c1b1c",
+                      "secondary": "#0055c7",
+                      "surface": "#fdf8f8",
+                      "tertiary": "#ff7759",
+                      "surface-tint": "#5f5e64",
+                      "inverse-primary": "#c8c5cc",
+                      "outline-variant": "#c8c5cb",
+                      "background": "#fdf8f8",
+                      "on-primary-container": "#848389",
+                      "surface-dim-custom": "#003c33"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "md": "24px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "lg": "48px",
+                      "xl": "80px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-medium": [
+                              "Space Grotesk"
+                      ],
+                      "body-large": [
+                              "Inter"
+                      ],
+                      "label-large": [
+                              "Space Grotesk"
+                      ],
+                      "headline-large": [
+                              "Inter"
+                      ],
+                      "display-large": [
+                              "Space Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-medium": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-1.44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-large": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-large": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.71",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-large": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.48px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-large": [
+                              "96px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-1.92px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-large text-body-large antialiased min-h-screen flex flex-col pt-24">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-800">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<a class="font-['Space_Grotesk'] text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50" href="#">Lumina</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">Process</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">Materials</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300" href="#">Archive</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-[12px] text-zinc-900 dark:text-zinc-50 border-b-2 border-zinc-900 dark:border-zinc-50 pb-1" href="#">Journal</a>
+</nav>
+<button class="hidden md:block px-6 py-2 bg-primary text-on-primary rounded-xl font-label-large text-label-large hover:bg-zinc-800 transition-colors">
+                Consultation
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Header Section -->
+<section class="relative w-full h-[614px] min-h-[500px] flex items-center justify-center bg-surface-container overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-60" data-alt="Abstract pale wash background with subtle 3D architectural forms and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALPrhjcUlMDtfDKL3ny6AMJZBHrRP9VOe4l8iSrxVFdSmF62tlPy332mpwLdcFdtHH3dVIunGGdahD5OtDfRTlAXe_K0dZQvTIhS25cyxmuL_u_W00LyjREaxJqXCUs-DwXWFvKLoyZSQDZ-6W4rLS6RvtdP7HcSqzJaL1DFgnwWplqO_wBFfYAOmE04wBSbwhseEUBa1ZSBxNxNF66QXFxT1gLKwENb6AnB_w3DJqK5AtKu3CgaDdoj-HL5O7v0AN_Sv2wFkW8SuE"/>
+</div>
+<div class="relative z-10 text-center">
+<h1 class="font-display-large text-display-large text-on-surface">Journal</h1>
+</div>
+</section>
+<!-- Filters -->
+<section class="max-w-[1440px] mx-auto px-12 py-lg">
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface font-label-large text-label-large bg-surface hover:bg-surface-container-low transition-colors">All</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface font-label-large text-label-large bg-surface hover:bg-surface-container-low transition-colors">Research</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface font-label-large text-label-large bg-surface hover:bg-surface-container-low transition-colors">Case Studies</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface font-label-large text-label-large bg-surface hover:bg-surface-container-low transition-colors">Material Science</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface font-label-large text-label-large bg-surface hover:bg-surface-container-low transition-colors">Spatial AI</button>
+</div>
+</section>
+<!-- Grid -->
+<section class="max-w-[1440px] mx-auto px-12 pb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low rounded-DEFAULT mb-6">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist living room with concrete walls and brutalist furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL_j5ZCvkCuSkpClvfwSrJerJ4WRFoK-MMT5QKbSmqgCcLAWwZzRCZDg0HVGpAr-QwqrjDcirdK_cIZTvvssCIMRliXttMn9637ydfKuWcUPLsAWyLodDb7BUO5fPhh5yXZwvs8Q-kMaLYkcofdcrLhj6iLXL58oiaLxxiGaieOplxJPtBfPyuOzbkokjO_8qQbyClbSm-jqQXdyS7xLU0mhZj-jsPd7BvoYvnSxR1HoOcRnqW1YIHzNCzJyHMTSduALitHZrv2XFC"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-high px-3 py-1 font-label-large text-label-large text-on-surface rounded-DEFAULT shadow-sm">Case Studies</span>
+</div>
+</div>
+<div class="flex-grow flex flex-col">
+<h2 class="font-display-medium text-[32px] leading-tight text-on-surface mb-4">The Brutalist Revival in Domestic Spaces</h2>
+<p class="font-body-large text-body-large text-on-surface-variant mb-6 line-clamp-3">Examining how raw concrete and exposed structural elements are being softened for residential interiors.</p>
+<div class="mt-auto flex items-center text-primary font-label-large text-label-large uppercase tracking-widest group-hover:text-surface-tint transition-colors">
+                            Read Article <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low rounded-DEFAULT mb-6">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of textured stone materials and fabric swatches on a white desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArX08EM1rj2J4_bM5oUT-TEsq5XAXpMqvj3AP2150E0n1IdDC5hIOI1WssgV-G4GHzhlzDMGBZ0U4mTMYyBy056vmMDA1BHXvgZACUakv9neBw2vWo3qIFewiNFC_jtFNgLwGWkT2vGAue4-gAzAfffH3ULaUc4cYvFY3BVZccGE3h658qDlNV8scab4dhImmIHOfRnWIIjVk6uTNtL_vEktwWnt2rtsZliRAaiapI2wQq9LKEdj_JoH_uabSRSPPAjm3EOngHNYsv"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-high px-3 py-1 font-label-large text-label-large text-on-surface rounded-DEFAULT shadow-sm">Material Science</span>
+</div>
+</div>
+<div class="flex-grow flex flex-col">
+<h2 class="font-display-medium text-[32px] leading-tight text-on-surface mb-4">Acoustic Properties of Porous Stone</h2>
+<p class="font-body-large text-body-large text-on-surface-variant mb-6 line-clamp-3">Recent research into leveraging natural volcanic rock formations for superior sound dampening in open-plan offices.</p>
+<div class="mt-auto flex items-center text-primary font-label-large text-label-large uppercase tracking-widest group-hover:text-surface-tint transition-colors">
+                            Read Article <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-low rounded-DEFAULT mb-6">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract architectural rendering showing spatial flow and light mapping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6owxunrbvvKqKdZ_0lfuvv4Tj1htXkC-bjzXCHJvDRxaqzMVsa7KAn_KKCvEEUy_FjLSu7yO6LqjnGX7JVHehyJFiIA-aIURB8lgei3hl8UAW3tmpGEiK96Akk5AVdfgoJgTCtTjYc-b0O85luYjQFLM67GzSM8IG-IZ9Xa3xoLEpB3ciPygcUFxWxcHhBjB_s2-ptfwPGllOhiNGnlgowPzukG5HM0czET6nohgYziovHU8zb6PqbF770dU93Vi1zsnVmas55lYM"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-high px-3 py-1 font-label-large text-label-large text-on-surface rounded-DEFAULT shadow-sm">Spatial AI</span>
+</div>
+</div>
+<div class="flex-grow flex flex-col">
+<h2 class="font-display-medium text-[32px] leading-tight text-on-surface mb-4">Algorithmic Circulation Planning</h2>
+<p class="font-body-large text-body-large text-on-surface-variant mb-6 line-clamp-3">How machine learning models are optimizing human traffic flows in large-scale commercial developments.</p>
+<div class="mt-auto flex items-center text-primary font-label-large text-label-large uppercase tracking-widest group-hover:text-surface-tint transition-colors">
+                            Read Article <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="bg-primary-container py-xl">
+<div class="max-w-[1440px] mx-auto px-12 text-center">
+<h2 class="font-headline-large text-headline-large text-on-primary mb-6">The Architecture of Tomorrow</h2>
+<p class="font-body-large text-body-large text-on-primary-container mb-8 max-w-2xl mx-auto">Subscribe to our journal for weekly insights on materials, process, and the evolving landscape of interior space.</p>
+<form class="flex max-w-md mx-auto relative">
+<input class="w-full bg-transparent border-b border-on-primary-container text-on-primary focus:outline-none focus:border-on-primary py-3 px-2 font-body-large placeholder:text-on-primary-container/50" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-on-primary hover:text-surface-tint transition-colors" type="submit">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-950 dark:bg-black w-full pt-24 pb-12 border-t border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-4">
+<span class="font-['Space_Grotesk'] text-5xl font-black uppercase tracking-tighter text-zinc-50 mb-8 block">Lumina</span>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="font-['Inter'] text-sm leading-relaxed text-zinc-50">© 2024 Lumina Collective. Architectural Integrity.</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex gap-8 justify-end">
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-['Inter'] text-sm leading-relaxed text-zinc-400 hover:text-zinc-50 transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>
